@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Marklume 隱私權政策</title>
+<style>
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:#fbfaf7;color:#1d2024;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.25rem 4rem}nav.lang{max-width:46rem;margin:0 auto;padding:1rem 1.25rem 0;text-align:right;font-size:.95rem}
+a{color:#0b6b5a}a:focus-visible{outline:2px solid #0b6b5a;outline-offset:2px}h1{font-size:1.9rem;line-height:1.25;margin:.5rem 0 1rem}h2{font-size:1.3rem;margin:2.2rem 0 .6rem;padding-top:.4rem;border-top:1px solid #e3e0d8}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:#efece5;padding:.1em .3em;border-radius:4px}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem;display:block;overflow-x:auto}th,td{border:1px solid #d9d5cc;padding:.5rem .65rem;text-align:left;vertical-align:top}th{background:#f1eee7}
+@media (prefers-color-scheme:dark){body{background:#141618;color:#e6e4df}a{color:#5fd0b8}a:focus-visible{outline-color:#5fd0b8}h2{border-color:#2c3035}code{background:#24282d}th,td{border-color:#353a40}th{background:#1f2327}}
+</style>
+</head>
+<body>
+<nav class="lang" aria-label="語言"><a href="../" hreflang="en" lang="en">English</a></nav>
+<main>
+<h1>Marklume 隱私權政策</h1>
+<p>生效日期：2026-11-24　最後更新：2026-11-24</p>
+<p>本政策網址：<a href="https://kumahua.github.io/marklume/privacy/zh-TW/">https://kumahua.github.io/marklume/privacy/zh-TW/</a></p>
+<p><strong>一句話：Marklume 不蒐集、不上傳任何資料。</strong> 它在你的電腦上讀取並排版你打開的 Markdown 文件；開發者沒有伺服器，也收不到任何東西。</p>
+<h2>1. Marklume 在你的電腦上會讀取什麼</h2>
+<p>為了把文件排版出來，Marklume 會在你的瀏覽器裡讀取以下內容。這些資料只在你的電腦上處理，<strong>不會傳送給開發者或任何第三方</strong>：</p>
+<ul>
+<li>你打開的 <code>.md</code>／<code>.markdown</code> 分頁的文字內容。網址結尾不是這兩種的頁面，Marklume 會立刻停止，不讀取內容。</li>
+<li>目前資料夾的檔案與子資料夾名稱（「檔案」分頁使用），以及目前文件的網址或路徑。</li>
+</ul>
+<h2>2. 存在你電腦上的資料</h2>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>內容</th>
+<th>保留多久</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>chrome.storage.local</code></td>
+<td>閱讀設定：主題、字級、內文寬度、側欄寬度與分頁、各項開關（例如自動重新整理、封鎖遠端媒體、顯示隱藏檔案）</td>
+<td>直到你變更設定或移除擴充功能</td>
+</tr>
+<tr>
+<td><code>chrome.storage.local</code></td>
+<td>你展開過的資料夾網址（最多 300 筆，用來記住檔案樹的展開狀態）</td>
+<td>超過 300 筆時刪除最舊的；移除擴充功能時一併刪除</td>
+</tr>
+<tr>
+<td><code>chrome.storage.session</code></td>
+<td>資料夾列表的暫存（30 秒）與檔案樹的捲動位置</td>
+<td>關閉瀏覽器即清除</td>
+</tr>
+</tbody></table>
+<ul>
+<li>不使用 <code>chrome.storage.sync</code>，所以設定<strong>不會</strong>同步到你的 Google 帳號或其他裝置。</li>
+<li>移除 Marklume 時，Chrome 會刪除上面所有資料。</li>
+</ul>
+<h2>3. 網路連線</h2>
+<p>Marklume 沒有自己的伺服器，不使用分析或追蹤工具，也不從網路載入程式碼（所有程式庫都打包在擴充功能裡）。它只會在以下三種情況連線，而且目的地都是<strong>文件本身所在的位置</strong>：</p>
+<ol>
+<li><strong>自動重新整理</strong>：重新讀取你正在看的本機檔案（file://），偵測存檔。資料不會離開你的電腦。可以在設定面板關閉。</li>
+<li><strong>資料夾列表</strong>：讀取目前資料夾的列表。本機資料夾在你的電腦上讀取；網路上的文件則向<strong>同一台伺服器</strong>要該資料夾的列表頁。</li>
+<li><strong>修正文字編碼</strong>：網路上的文件沒有宣告編碼時，向同一台伺服器重新讀取這份文件，讓中文正確顯示。</li>
+</ol>
+<p>第 2、3 項的請求不帶 cookie、登入資訊或用戶端憑證，也不跟隨轉址。</p>
+<h2>4. 文件裡的遠端圖片、影片與音訊</h2>
+<p>如果文件引用了其他網站的圖片、影片或音訊，<strong>預設</strong>會像一般網頁一樣，從那些網站直接載入。這是文件本身的內容，那些網站可能會依它們自己的政策看到你的 IP 位址等連線資訊。</p>
+<p>如果你不想自動連線，可以在設定面板開啟「<strong>封鎖遠端媒體</strong>」（預設關閉）。開啟後，遠端媒體會先顯示為佔位框，你可以一個一個點開，或按「全部載入」。</p>
+<h2>5. 權限說明</h2>
+<table>
+<thead>
+<tr>
+<th>權限</th>
+<th>為什麼需要</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>storage</code></td>
+<td>把設定存在 <code>chrome.storage.local</code>，並把資料夾列表短暫存在 <code>chrome.storage.session</code></td>
+</tr>
+<tr>
+<td><code>scripting</code></td>
+<td>確認分頁是 Markdown 文件後，把排版程式與樣式放進該分頁；設定面板也用它查看目前分頁的狀態</td>
+</tr>
+<tr>
+<td>主機權限：<code>file:///*</code></td>
+<td>讀取本機 <code>.md</code> 檔與它所在的資料夾列表，並在存檔後自動重新整理。另外需要你在擴充功能詳細資料開啟「允許存取檔案網址」</td>
+</tr>
+<tr>
+<td>主機權限：<code>http://*/*</code>、<code>https://*/*</code></td>
+<td>Markdown 文件可能放在任何網站上。Marklume 用它讀取網址結尾是 <code>.md</code>／<code>.markdown</code> 的頁面、讀取同一台伺服器的資料夾列表，以及修正文字編碼</td>
+</tr>
+</tbody></table>
+<p>快捷鍵（<code>commands</code>，預設 Alt+Shift+M）不是權限，只用來切換預覽與原始碼。</p>
+<h2>6. 兒童</h2>
+<p>Marklume 不蒐集任何人的資料，包括兒童。</p>
+<h2>7. 政策變更</h2>
+<p>如果日後資料處理方式有任何改變，我們會先更新本頁與商店說明，並在擴充功能內明確告知，才會開始新的做法。</p>
+<h2>8. 聯絡方式</h2>
+<p>對本政策或 Marklume 有任何問題，請寄信到：<strong><a href="mailto:a4704704@gmail.com">a4704704@gmail.com</a></strong></p>
+</main>
+</body>
+</html>

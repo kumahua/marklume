@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Marklume Privacy Policy</title>
+<style>
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:#fbfaf7;color:#1d2024;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.25rem 4rem}nav.lang{max-width:46rem;margin:0 auto;padding:1rem 1.25rem 0;text-align:right;font-size:.95rem}
+a{color:#0b6b5a}a:focus-visible{outline:2px solid #0b6b5a;outline-offset:2px}h1{font-size:1.9rem;line-height:1.25;margin:.5rem 0 1rem}h2{font-size:1.3rem;margin:2.2rem 0 .6rem;padding-top:.4rem;border-top:1px solid #e3e0d8}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:#efece5;padding:.1em .3em;border-radius:4px}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem;display:block;overflow-x:auto}th,td{border:1px solid #d9d5cc;padding:.5rem .65rem;text-align:left;vertical-align:top}th{background:#f1eee7}
+@media (prefers-color-scheme:dark){body{background:#141618;color:#e6e4df}a{color:#5fd0b8}a:focus-visible{outline-color:#5fd0b8}h2{border-color:#2c3035}code{background:#24282d}th,td{border-color:#353a40}th{background:#1f2327}}
+</style>
+</head>
+<body>
+<nav class="lang" aria-label="Language"><a href="zh-TW/" hreflang="zh-Hant-TW" lang="zh-Hant-TW">繁體中文</a></nav>
+<main>
+<h1>Marklume Privacy Policy</h1>
+<p>Effective date: 2026-11-24　Last updated: 2026-11-24</p>
+<p>Policy URL: <a href="https://kumahua.github.io/marklume/privacy/">https://kumahua.github.io/marklume/privacy/</a></p>
+<p><strong>In one sentence: Marklume collects nothing and uploads nothing.</strong> It reads and lays out the Markdown documents you open, right in your browser. The developer has no server and receives nothing.</p>
+<h2>1. What Marklume reads on your computer</h2>
+<p>To lay out a document, Marklume reads the following inside your browser. This is processed only on your computer and is <strong>never sent to the developer or any third party</strong>:</p>
+<ul>
+<li>The text of <code>.md</code> / <code>.markdown</code> tabs you open. On pages whose URL doesn&#39;t end in one of those, Marklume stops immediately and doesn&#39;t read the content.</li>
+<li>The names of files and subfolders in the current folder (for the Files tab), and the current document&#39;s URL or path.</li>
+</ul>
+<h2>2. Data stored on your computer</h2>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>What</th>
+<th>How long</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>chrome.storage.local</code></td>
+<td>Reading settings: theme, font size, text width, sidebar width and tab, and toggles such as auto-reload, Block remote media and Show hidden files</td>
+<td>Until you change them or remove the extension</td>
+</tr>
+<tr>
+<td><code>chrome.storage.local</code></td>
+<td>Addresses of folders you expanded (up to 300, so the file tree remembers what was open)</td>
+<td>The oldest are dropped past 300; all are deleted when you remove the extension</td>
+</tr>
+<tr>
+<td><code>chrome.storage.session</code></td>
+<td>A 30-second cache of folder listings and the file tree&#39;s scroll position</td>
+<td>Cleared when you close the browser</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Marklume doesn&#39;t use <code>chrome.storage.sync</code>, so settings are <strong>not</strong> synced to your Google account or other devices.</li>
+<li>When you remove Marklume, Chrome deletes all of the above.</li>
+</ul>
+<h2>3. Network connections</h2>
+<p>Marklume has no server of its own, uses no analytics or tracking, and loads no code from the internet (every library is bundled in the extension). It connects only in these three cases, and always to <strong>where the document itself lives</strong>:</p>
+<ol>
+<li><strong>Auto-reload:</strong> re-reads the local file (file://) you&#39;re viewing to notice when you save it. Nothing leaves your computer. You can turn this off in the settings panel.</li>
+<li><strong>Folder listings:</strong> reads the current folder&#39;s listing. Local folders are read on your computer; for documents on the web, Marklume asks <strong>the same server</strong> for that folder&#39;s listing page.</li>
+<li><strong>Text encoding fix:</strong> when a web server doesn&#39;t declare a document&#39;s encoding, Marklume re-reads that document from the same server so that non-Latin text such as Chinese displays correctly.</li>
+</ol>
+<p>Requests in cases 2 and 3 send no cookies, login details or client certificates, and don&#39;t follow redirects.</p>
+<h2>4. Remote images, video and audio in documents</h2>
+<p>If a document links to images, video or audio hosted on other websites, they load from those websites <strong>by default</strong>, just as they would on any web page. That content is part of the document, and those sites may see connection details such as your IP address under their own policies.</p>
+<p>If you&#39;d rather not connect automatically, turn on <strong>Block remote media</strong> in the settings panel (off by default). Remote media then appears as placeholders that you can load one at a time, or all at once with Load all.</p>
+<h2>5. Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Why it&#39;s needed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>storage</code></td>
+<td>Keeps settings in <code>chrome.storage.local</code> and briefly caches folder listings in <code>chrome.storage.session</code></td>
+</tr>
+<tr>
+<td><code>scripting</code></td>
+<td>After confirming a tab is a Markdown document, adds the layout code and styles to that tab; the settings panel also uses it to check the current tab&#39;s state</td>
+</tr>
+<tr>
+<td>Host permission <code>file:///*</code></td>
+<td>Reads local <code>.md</code> files and their folder listings, and reloads after you save. You also need to turn on &quot;Allow access to file URLs&quot; in the extension&#39;s details</td>
+</tr>
+<tr>
+<td>Host permissions <code>http://*/*</code>, <code>https://*/*</code></td>
+<td>Markdown files can be hosted on any website. Marklume uses this to read pages whose URL ends in <code>.md</code> / <code>.markdown</code>, read folder listings from the same server, and fix text encoding</td>
+</tr>
+</tbody></table>
+<p>The keyboard shortcut (<code>commands</code>, Alt+Shift+M by default) is not a permission; it only switches between the preview and the source.</p>
+<h2>6. Children</h2>
+<p>Marklume doesn&#39;t collect data from anyone, including children.</p>
+<h2>7. Changes to this policy</h2>
+<p>If the way Marklume handles data ever changes, we&#39;ll update this page and the store listing, and tell you clearly inside the extension, before the new practice starts.</p>
+<h2>8. Contact</h2>
+<p>Questions about this policy or Marklume? Email <strong><a href="mailto:a4704704@gmail.com">a4704704@gmail.com</a></strong>.</p>
+</main>
+</body>
+</html>
